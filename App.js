@@ -1,11 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Text, Image } from "react-native";
+import LoginComponent from "./src/componentes/LoginComponent";
+import ImgButtonComponent from "./src/componentes/ImgButtonComponent";
+import SigInComponent from "./src/componentes/SigInComponent";
 
-export default function App() {
+function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <LoginComponent>
+      <Text>Login</Text>
+      </LoginComponent>
+      <ImgButtonComponent>
+      <Image source={require('./src/imagens/login.png')} resizeMode='contain' style={{ height: 100, width: 100}} />
+      </ImgButtonComponent>
+      <SigInComponent>
+      <Text>SigIn</Text>
+      </SigInComponent>
     </View>
   );
 }
@@ -13,8 +22,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    paddingHorizontal: 10,
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
   },
 });
+
+export default App;
